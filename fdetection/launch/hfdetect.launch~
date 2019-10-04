@@ -1,0 +1,14 @@
+<launch>
+	<group	ns="version1">
+		<node	pkg="image_node_a"	name="Clip_input"	type="image_node_a" args="/home/walt/video/MAH00314.MP4" respawn="true"/>
+		<node	pkg="image_node_b"	name="Human_detect"	type="image_node_b"  args="0.6 30 '/home/walt/catkin_ws/src/image_node_b/src/combined.txt.model' '/home/walt/catkin_ws/src/image_node_b/src/combined.txt.model_'" respawn="true" />
+		<node	pkg="fdetection"	name="Face_detect"	type="fdetect" respawn="true"/>
+		<node pkg="struck" name="struck" type="struck" args="'/home/walt/catkin_ws/src/struck/config.txt'" />
+		<node pkg="controls" name="controller" type="controller" output = "screen">
+			<rosparam 
+				file="$(find controls)/config/Lichtparam.yaml"
+				command="load" 
+			/>
+		</node>
+	</group>
+</launch>
