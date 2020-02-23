@@ -19,7 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
 )  
 
 set(OpenCV_DIR /opt/ros/kinetic/include)  
-find_package(OpenCV 2 REQUIRED)  
+find_package(OpenCV  REQUIRED)  
 message("PB->OPENCV = ${OpenCV_INCLUDE_DIRS}")  
 
 catkin_package(CATKIN_DEPENDS  
