@@ -82,8 +82,8 @@ add_executable(fdetect
 ${HEADER_FILES}  
 ${SOURCE_FILES}  
 ) 
- 
-  
+add_dependencies(fdetect ${catkin_EXPORTED_TARGETS})
+add_dependencies(fdetect fdetection_generate_messages_cpp)
 target_link_libraries(fdetect  
 ${catkin_LIBRARIES}  
 ${OpenCV_LIBRARIES}   

@@ -29,6 +29,7 @@ include_directories(
 )
 
 add_executable(controller src/controller.cpp)
+add_dependencies(controller ${catkin_EXPORTED_TARGETS})
 target_link_libraries(controller
  ${catkin_LIBRARIES} 
   )

@@ -61,7 +61,8 @@ file(GLOB_RECURSE SRC RELATIVE ${PROJECT_SOURCE_DIR} src/*.cpp)
 file(GLOB_RECURSE HEADERS RELATIVE ${PROJECT_SOURCE_DIR} src/*.h)
 
 add_executable(struck ${HEADERS} ${SRC})
-
+add_dependencies(struck ${catkin_EXPORTED_TARGETS})
+add_dependencies(struck struck_generate_messages_cpp)
 target_link_libraries(struck
     ${OpenCV_LIBS}
     ${catkin_LIBRARIES}

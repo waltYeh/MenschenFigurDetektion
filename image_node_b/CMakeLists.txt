@@ -43,7 +43,8 @@ add_executable(image_node_b
 ${HEADER_FILES}  
 ${SOURCE_FILES}  
 )  
-  
+add_dependencies(image_node_b ${catkin_EXPORTED_TARGETS})
+add_dependencies(image_node_b struck_generate_messages_cpp)
 target_link_libraries(image_node_b  
 ${catkin_LIBRARIES}  
 ${OpenCV_LIBRARIES}  
