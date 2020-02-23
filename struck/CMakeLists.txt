@@ -11,7 +11,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_HOME_DIRECTORY}/cmake ${CMAKE_MODULE_PATH})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 #find_package(Eigen REQUIRED)
-find_package(OpenCV REQUIRED)
+find_package(OpenCV  REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
@@ -64,7 +64,7 @@ add_executable(struck ${HEADERS} ${SRC})
 add_dependencies(struck ${catkin_EXPORTED_TARGETS})
 add_dependencies(struck struck_generate_messages_cpp)
 target_link_libraries(struck
-    ${OpenCV_LIBS}
+    ${OpenCV_LIBRARIES}
     ${catkin_LIBRARIES}
 )
 

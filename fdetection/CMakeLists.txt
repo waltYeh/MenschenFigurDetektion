@@ -53,7 +53,7 @@ generate_messages(
 )
 
 set(OpenCV_DIR /opt/ros/kinetic/include) 
-find_package(OpenCV REQUIRED)  
+find_package(OpenCV  REQUIRED)  
 message("PB->OPENCV = ${OpenCV_INCLUDE_DIRS}")
 
 
